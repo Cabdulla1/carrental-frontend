@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+        <tr>
+            <td>Araba</td>
+            <td>Müşteri</td>
+            <td>Kiralama Tarihi</td>
+            <td>Teslimat Tarihi</td>
+        </tr>
+    </thead>
+    <tr *ngFor="let rental of rentals">
+        <td>{{rental.brandName}}</td>
+        <td>{{rental.customer}}</td>
+        <td>{{rental.rentDate}}</td>
+        <td>{{rental.returnDate}}</td>
+    </tr>
+</table>
