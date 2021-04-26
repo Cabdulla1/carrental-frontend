@@ -1,0 +1,91 @@
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div
+            *ngFor="let image of carImages; let i = index"
+            class="carousel-item active"
+            [ngClass]="{ active: i == 0 }"
+          >
+            <img
+              src="https://localhost:44333{{ image.imagePath }}"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-md-9">
+      <table class="table">
+          
+          <tbody>
+              <tr class="table-active">
+                  <td>
+                      <span class="float-start">Marka</span>
+                      <span class="float-end">{{car[0].brandName}}</span>
+                  </td>
+              </tr >
+              <tr class="table-active">
+                <td>
+                    <span class="float-start">Araba</span>
+                    <span class="float-end">{{car[0].carName}}</span>
+                </td>
+            </tr>
+            <tr class="table-active">
+                <td>
+                    <span class="float-start">Renk</span>
+                    <span class="float-end">{{car[0].colorName}}</span>
+                </td>
+            </tr>
+            <tr class="table-active">
+                <td>
+                    <span class="float-start">Model</span>
+                    <span class="float-end">{{car[0].modelYear}}</span>
+                </td>
+            </tr>
+            <tr class="table-active">
+                <td>
+                    <span class="float-start">Günlük Fiyat</span>
+                    <span class="float-end">₺{{car[0].dailyPrice}}</span>
+                </td>
+            </tr>
+            <tr class="table-active">
+                <td>
+                    <span class="float-start">Açıklama</span>
+                    <span class="float-end">{{car[0].description}}</span>
+                </td>
+            </tr>
+
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>
