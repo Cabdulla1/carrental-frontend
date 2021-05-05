@@ -1,7 +1,7 @@
 <br />
 <div class="container">
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-7">
       <div
         id="carouselExampleControls"
         class="carousel slide"
@@ -40,52 +40,93 @@
         </button>
       </div>
     </div>
-  </div>
-  <br />
-  <div class="row">
-    <div class="col-md-9">
+  
+
+
+    <div class="col-md-5">
       <table class="table">
           
           <tbody>
               <tr class="table-active">
-                  <td>
+                  <td >
                       <span class="float-start">Marka</span>
-                      <span class="float-end">{{car[0].brandName}}</span>
+                      <span class="float-end" >{{car[0]?.brandName}}</span>
                   </td>
               </tr >
               <tr class="table-active">
                 <td>
                     <span class="float-start">Araba</span>
-                    <span class="float-end">{{car[0].carName}}</span>
+                    <span class="float-end">{{car[0]?.carName}}</span>
                 </td>
             </tr>
             <tr class="table-active">
                 <td>
                     <span class="float-start">Renk</span>
-                    <span class="float-end">{{car[0].colorName}}</span>
+                    <span class="float-end">{{car[0]?.colorName}}</span>
                 </td>
             </tr>
             <tr class="table-active">
                 <td>
                     <span class="float-start">Model</span>
-                    <span class="float-end">{{car[0].modelYear}}</span>
+                    <span class="float-end">{{car[0]?.modelYear}}</span>
                 </td>
             </tr>
             <tr class="table-active">
                 <td>
                     <span class="float-start">Günlük Fiyat</span>
-                    <span class="float-end">₺{{car[0].dailyPrice}}</span>
+                    <span class="float-end">₺{{car[0]?.dailyPrice}}</span>
                 </td>
             </tr>
             <tr class="table-active">
                 <td>
                     <span class="float-start">Açıklama</span>
-                    <span class="float-end">{{car[0].description}}</span>
+                    <span class="float-end">{{car[0]?.description}}</span>
                 </td>
             </tr>
 
           </tbody>
+          
       </table>
+      <div class="row" style="width: 310px; margin-left: 1px;">
+        
+          <select [(ngModel)]= "currentCustomerId" class="form-select" aria-label="Default select example">
+            <option *ngFor="let customer of customers"  [value]=customer.userId>{{customer.companyName}}</option>
+          </select>
+        
+        
+      </div>
+      
+      <div class="col-xs-12 col-12 col-md-4 form-group">
+        <input type="text"
+               placeholder="Teslim alma tarihi" [(ngModel)]="rentDate"
+               class="form-control"
+               bsDatepicker
+               style="width: 310px; margin-top: 5px;">
+      </div>
+      <div class="col-xs-12 col-12 col-md-4 form-group">
+        <input type="text"
+               placeholder="Teslim etme tarihi" [(ngModel)]="returnDate"
+               class="form-control"
+               bsDatepicker
+               style="width: 310px; margin-top: 5px;">
+      </div>
+      <a class="btn btn-success" (click)="setCurrentRental()" (click) = "addRental()" (click)="checkRentalSuccess()"
+      style="width: 310px; margin-top: 5px;" >Kirala</a>
+
+      <a class="btn btn-primary" *ngIf="rentalSuccess===true"
+      style="width: 310px; margin-top: 5px;"  routerLink="/payment/{{car[0]?.id}}/{{currentRental[currentRental.length-1]?.id}}">Öde</a>
+      
     </div>
+      
   </div>
+  
 </div>
+
+<br>
+<div class="row">
+
+  <img *ngFor="let image of carImages" src="https://localhost:44333{{ image.imagePath }} " alt="" 
+  style="width: 280px; margin-top: 10px;">
+  
+</div>
+

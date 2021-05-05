@@ -1,16 +1,64 @@
 <h4></h4>
+
 <div class="row">
-  <div *ngFor="let car of cars" class="card" style="width: 25rem">
+  <div class="col-md-4">
+    <label for="filterTextBrand" class="form-label">Marka</label>
+    <input type="text" [(ngModel)]="filterTextBrand" class="form-control" 
+    id="filterTextBrand" placeholder="arama ifadesi giriniz">
+  </div>
+  <div class="col-md-4">
+    <label for="filterTextColor" class="form-label">Renk</label>
+    <input type="text" [(ngModel)]="filterTextColor" class="form-control" 
+    id="filterTextColor" placeholder="arama ifadesi giriniz">
+  </div>
+  <div class="col-md-4">
+    <label for="filterTextCar" class="form-label">Araba</label>
+    <input type="text" [(ngModel)]="filterTextCar" class="form-control" 
+    id="filterTextCar" placeholder="arama ifadesi giriniz">
+  </div> 
+  
+</div>
+<br>
+
+<div class="row">
+  <div class="col-md-5">
+    <select [(ngModel)] = "currentBrand" class="form-select" aria-label="Default select example">
+      <option *ngFor="let brand of brands" [value]="brand.id">{{brand.brandName}}</option>
+    </select>
+  </div>
+  <div class="col-md-5">
+    <select [(ngModel)] = "currentColor" class="form-select" aria-label="Default select example">
+      <option *ngFor="let color of colors" [value]="color.id">{{color.colorName}}</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+    <a class="btn btn-success" routerLink = "/cars/brand&color/{{currentBrand}}/{{currentColor}}">Filtrele</a>
+    
+  </div>
+
+  
+
+</div>
+<br>
+<div class="row">
+
+  <div *ngFor="let car of cars | brandPipe : filterTextBrand | colorPipe : filterTextColor | carPipe : filterTextCar" 
+  class="card" style="width: 25rem; margin-left: 15px; margin-top: 10px;">
     <img
       src="{{ url }}{{car.carImages[0].imagePath}}"
       class="card-img-top"
       alt="..."
+      
     />
     <div class="card-body">
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
           <span class="float-start">Marka</span>
           <span class="float-end">{{ car.brandName }}</span>
+        </li>
+        <li class="list-group-item">
+          <span class="float-start">Araba</span>
+          <span class="float-end">{{ car.carName }}</span>
         </li>
         <li class="list-group-item">
           <span class="float-start">Renk</span>
@@ -30,12 +78,20 @@
 
       <div class="row">
         <div class="col-md-3"></div>
-        <div class="col-md-6">
+        
           <a (click)="setCurrentCar(car)" class="btn btn-primary" 
           routerLink ="/cars/details/{{car.id}}"  >Araba Detayları</a>
-        </div>
+        
+        <div class="col-md-3"></div>
+        <br>
+        <div class="col-md-3"></div>
+        
+          <a  (click)="setCurrentCar(car)" class="btn btn-success" 
+          routerLink ="/cars/details/{{car.id}}" >Kirala</a>
+        
         <div class="col-md-3"></div>
       </div>
     </div>
   </div>
+
 </div>

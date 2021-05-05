@@ -34,5 +34,8 @@ export class CarService {
     return this.httpClient.get<ListResponseModel<Car>>(newPath);
   }
 
-  
+  getCarDetailsByBrandAndColor(brandId:number,colorId:number){
+    let newPath = this.apiUrl + 'cars/getcardetailsbybrandandcolor?brandId='+ brandId + '&colorId=' + colorId; 
+    return this.httpClient.get<ListResponseModel<Car>>(newPath);
+  }
 }

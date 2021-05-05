@@ -1,0 +1,72 @@
+<div class="row" style="margin-top: 35px;">
+    <div class="col-md-12">
+        <script type="text/javascript">
+            function calculateTotalPrice(){
+                {{totalPric}}
+            }
+        </script>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" style="text-align: center;background-color: rgb(201, 201, 201);">
+                Kiralama Bilgileri
+              </li>
+            <li class="list-group-item" style="background-color: rgb(221, 221, 221);">
+              <span class="float-start">Araba</span>
+              <span class="float-end">{{car[0]?.brandName}} {{ car[0]?.carName }}</span>
+            </li>
+            <li class="list-group-item" style="background-color: rgb(201, 201, 201);">
+              <span class="float-start">Günlük fiyat</span>
+              <span class="float-end">₺{{ car[0]?.dailyPrice }}</span>
+            </li>
+            <li class="list-group-item" style="background-color: rgb(221, 221, 221);">
+              <span class="float-start">Kiralama tarihi</span>
+              <span class="float-end">{{ rental[0]?.rentDate }}</span>
+            </li>
+            <li class="list-group-item" style="background-color: rgb(201, 201, 201);">
+              <span class="float-start">Teslim etme tarihi</span>
+              <span class="float-end">{{ rental[0]?.returnDate }}</span>
+            </li>
+            <li class="list-group-item" style="background-color: rgb(221, 221, 221);">
+              <span class="float-start">Toplam fiyat</span>
+              <span class="float-end">₺{{calculateTotalPrice()}}</span>
+            </li>
+            
+          </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <label for="fullName" class="form-label">
+            Name on card
+        </label>
+        <input id="fullName" type="text" class="form-control" style=" text-transform: uppercase;">
+        <small class="text-muted">Full name as displayed on card</small>
+        <div class="invalid-feedback">Name on card is required</div>
+    </div>
+    <div class="col-md-6">
+        <label for="cc-number">
+            Credit Card Number
+        </label>
+        <input style="margin-top: 7px;" id="cc-number" type="text" [(ngModel)]="creditCardNumber"
+          class="form-control" >
+        <div class="invalid-feedback" >Credit Card number is required</div>
+    </div>
+    <div class="col-md-3">
+        <label for="cc-expire">
+            Expiration
+        </label>
+        <input id="cc-expire" type="text" class="form-control">
+        <div class="invalid-feedback">Expiration is required</div>
+    </div>
+    <div class="col-md-3">
+        <label for="cc-cvv">
+            CVV
+        </label>
+        <input id="cc-cvv" type="text" class="form-control">
+        <div class="invalid-feedback">CVV is required</div>
+    </div>
+    <hr class="my-4"> 
+    <button class="btn btn-primary btn-lgbtn-block" (click)="setPayment()" (click)="addPayment(payment)">Checkout</button>
+
+    
+</div>
