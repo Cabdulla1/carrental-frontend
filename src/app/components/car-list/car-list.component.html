@@ -1,0 +1,19 @@
+<h4>Arabalar</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Arabalar</th>
+      <th scope="col">İşlem</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let car of cars">
+      <th scope="row">{{ car.id }}</th>
+      <td>{{ car.carName }}</td>
+      <td>
+        <a class="btn btn-primary" routerLink="/cars/update/{{car.id}}">Güncelle</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

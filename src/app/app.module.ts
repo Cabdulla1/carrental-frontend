@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http'
-import {FormsModule} from "@angular/forms"
+import {FormsModule,ReactiveFormsModule} from "@angular/forms"
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import {ToastrModule} from 'ngx-toastr'
@@ -20,6 +20,15 @@ import { BrandPipePipe } from './pipes/brand-pipe.pipe';
 import { ColorPipePipe } from './pipes/color-pipe.pipe';
 import { CarPipePipe } from './pipes/car-pipe.pipe';
 import { PaymentComponent } from './components/payment/payment.component';
+import { CarAddComponent } from './components/car-add/car-add.component';
+import { BrandAddComponent } from './components/brand-add/brand-add.component';
+import { ColorAddComponent } from './components/color-add/color-add.component';
+import { BrandDetailComponent } from './components/brand-detail/brand-detail.component';
+import { BrandUpdateComponent } from './components/brand-update/brand-update.component';
+import { ColorDetailComponent } from './components/color-detail/color-detail.component';
+import { ColorUpdateComponent } from './components/color-update/color-update.component';
+import { CarListComponent } from './components/car-list/car-list.component';
+import { CarUpdateComponent } from './components/car-update/car-update.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +44,15 @@ import { PaymentComponent } from './components/payment/payment.component';
     ColorPipePipe,
     CarPipePipe,
     PaymentComponent,
+    CarAddComponent,
+    BrandAddComponent,
+    ColorAddComponent,
+    BrandDetailComponent,
+    BrandUpdateComponent,
+    ColorDetailComponent,
+    ColorUpdateComponent,
+    CarListComponent,
+    CarUpdateComponent,
     
   ],
   imports: [
@@ -43,6 +61,7 @@ import { PaymentComponent } from './components/payment/payment.component';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"

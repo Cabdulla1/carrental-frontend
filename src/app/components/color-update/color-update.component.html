@@ -1,0 +1,15 @@
+<div class="content" style="margin-top: 35px;">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header"><h5 class="title">Renk Güncelle</h5></div>
+            <div class="card-body">
+                <div class="mb-3">Renk Adı : {{color[0]?.colorName}}</div>
+                <form [formGroup]="colorUpdateForm">
+                <input type="text" id="colorName"
+                formControlName = "colorName" class="form-control" placeholder="Yeni Renk Adı"/>
+                </form>
+            </div>
+            <div class="card-footer"><button class="btn btn-primary"  (click)="update()">Güncelle</button></div>
+        </div>
+    </div>
+</div>

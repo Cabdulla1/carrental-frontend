@@ -1,0 +1,19 @@
+<h4>Renkler</h4>
+<table class="table">
+    <thead >
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Renkler</th>
+              <th scope="col">İşlem</th>
+            </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor="let color of colors">
+              <th scope="row">{{ color.id }}</th>
+              <td>{{ color.colorName }}</td>
+              <td>
+                <a class="btn btn-primary" routerLink="/colors/update/{{color.id}}">Güncelle</a>
+              </td>
+            </tr>
+    </tbody>
+</table>

@@ -1,10 +1,6 @@
 <div class="row" style="margin-top: 35px;">
     <div class="col-md-12">
-        <script type="text/javascript">
-            function calculateTotalPrice(){
-                {{totalPric}}
-            }
-        </script>
+        
         <ul class="list-group list-group-flush">
             <li class="list-group-item" style="text-align: center;background-color: rgb(201, 201, 201);">
                 Kiralama Bilgileri
@@ -67,6 +63,7 @@
     </div>
     <hr class="my-4"> 
     <button class="btn btn-primary btn-lgbtn-block" (click)="setPayment()" (click)="addPayment(payment)">Checkout</button>
-
+    <button class="btn btn-success btn-lgbtn-block" *ngIf="paymentSuccess===true" 
+      routerLink="/" style="margin-top: 5px;">Ana Sayfa</button>
     
 </div>

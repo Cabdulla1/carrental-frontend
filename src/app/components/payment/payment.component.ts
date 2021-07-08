@@ -30,6 +30,7 @@ export class PaymentComponent implements OnInit {
   paymentSuccess:boolean;
 
   ngOnInit(): void {
+    this.paymentSuccess = false;
     this.activatedRoute.params.subscribe((params) => {
       this.getCar(params['carId']);
       this.getRental(params['rentalId']);

@@ -53,6 +53,7 @@ export class CarDetailComponent implements OnInit {
     this.carService.getCarDetailsById(carId).subscribe(response=>{
       this.car = response.data;
       this.carImages = this.car[0].carImages;
+      
     })
   }
 
@@ -70,11 +71,7 @@ export class CarDetailComponent implements OnInit {
        rentDate:new Date(this.rentDate),
        returnDate:new Date(this.returnDate)
     }
-    /* let rentalRentDate = new Date(this.rentDate)
-    this.rental.rentDate = rentalRentDate
-    let rentalReturnDate = new Date(this.returnDate)
-    this.rental.returnDate = rentalRentDate
-    this.rental.customerId = this.currentCustomerId */
+    
   }
 
 
@@ -111,5 +108,7 @@ export class CarDetailComponent implements OnInit {
     })
     
   }
+
+  
 
 }

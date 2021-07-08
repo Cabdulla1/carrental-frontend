@@ -1,0 +1,15 @@
+<div class="content" style="margin-top: 35px;">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header"><h5 class="title">Marka Güncelle</h5></div>
+            <div class="card-body">
+                <div class="mb-3">Marka Adı : {{brand[0]?.brandName}}</div>
+                <form [formGroup]="brandUpdateForm">
+                <input type="text" id="brandName"
+                formControlName = "brandName" class="form-control" placeholder="Yeni Marka Adı"/>
+                </form>
+            </div>
+            <div class="card-footer"><button class="btn btn-primary" (click)="update()">Güncelle</button></div>
+        </div>
+    </div>
+</div>
