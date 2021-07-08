@@ -11,7 +11,7 @@ import { ColorService } from 'src/app/services/color.service';
 })
 export class ColorDetailComponent implements OnInit {
 
-  colors: Color[];
+  colors: Color[]; 
   constructor(private formBuilde:FormBuilder,
     private toastrService:ToastrService,
     private colorService:ColorService) { }

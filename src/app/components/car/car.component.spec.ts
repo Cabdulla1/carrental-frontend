@@ -13,7 +13,7 @@ describe('CarComponent', () => {
     .compileComponents();
   });
 
-  beforeEach(() => {
+  beforeEach(() => { 
     fixture = TestBed.createComponent(CarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

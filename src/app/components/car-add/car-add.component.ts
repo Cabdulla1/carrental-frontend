@@ -45,7 +45,7 @@ export class CarAddComponent implements OnInit {
               this.toastrService.error(
                 responseError.error.Errors[i].ErrorMessage,
                 'Doğrulama hatası'
-
+ 
               );
             }
           }

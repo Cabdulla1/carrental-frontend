@@ -48,7 +48,7 @@ export class BrandUpdateComponent implements OnInit {
       this.brandService.update(brandModel).subscribe((response) => {
         this.toastrService.success(response.message);
       },
-      (responseError=>{
+      (responseError=>{ 
         if(responseError.error.Errors.length>0){
           for (let i = 0; i < responseError.error.Errors.length; i++) {
             this.toastrService.error(responseError.error.Errors[i].ErrorMessage)

@@ -11,7 +11,7 @@ describe('ColorUpdateComponent', () => {
       declarations: [ ColorUpdateComponent ]
     })
     .compileComponents();
-  });
+  }); 
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ColorUpdateComponent);

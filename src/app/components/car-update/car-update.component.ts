@@ -52,7 +52,7 @@ export class CarUpdateComponent implements OnInit {
       this.carService.update(carModel).subscribe(response=>{
         this.toastrService.success(response.message)
       },
-      (responseError=>{
+      (responseError=>{ 
         if(responseError.error.Errors.length>0){
           for (let i = 0; i < responseError.error.Errors.length; i++) {
               this.toastrService.error(responseError.error.Errors[i].ErrorMessage)

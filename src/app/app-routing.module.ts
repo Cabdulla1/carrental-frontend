@@ -34,7 +34,7 @@ const routes: Routes = [
   {path:"cars/getall",component:CarListComponent},
   {path:"cars/update/:carId",component:CarUpdateComponent}
   
-
+ 
 ];
 
 @NgModule({

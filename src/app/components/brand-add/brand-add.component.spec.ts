@@ -10,7 +10,7 @@ describe('BrandAddComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ BrandAddComponent ]
     })
-    .compileComponents();
+    .compileComponents(); 
   });
 
   beforeEach(() => {
@@ -20,6 +20,6 @@ describe('BrandAddComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeTruthy(); 
   });
 });

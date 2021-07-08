@@ -8,7 +8,7 @@ import { BrandService } from 'src/app/services/brand.service';
   styleUrls: ['./brand-detail.component.css'],
 })
 export class BrandDetailComponent implements OnInit {
-  brands: Brand[];
+  brands: Brand[]; 
   constructor(private brandService: BrandService) {}
 
   ngOnInit(): void {

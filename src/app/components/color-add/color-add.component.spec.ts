@@ -10,7 +10,7 @@ describe('ColorAddComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ ColorAddComponent ]
     })
-    .compileComponents();
+    .compileComponents(); 
   });
 
   beforeEach(() => {

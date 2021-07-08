@@ -12,7 +12,7 @@ describe('BrandDetailComponent', () => {
     })
     .compileComponents();
   });
-
+ 
   beforeEach(() => {
     fixture = TestBed.createComponent(BrandDetailComponent);
     component = fixture.componentInstance;

@@ -26,7 +26,7 @@ export class ColorUpdateComponent implements OnInit {
     this.activatedRoute.params.subscribe(params=>{
       if(params["colorId"]){
         this.getById(params["colorId"])
-      }
+      } 
     })
   }
 

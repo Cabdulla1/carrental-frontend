@@ -9,7 +9,7 @@ describe('ColorDetailComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ColorDetailComponent ]
-    })
+    }) 
     .compileComponents();
   });
 

@@ -10,7 +10,7 @@ describe('BrandUpdateComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ BrandUpdateComponent ]
     })
-    .compileComponents();
+    .compileComponents(); 
   });
 
   beforeEach(() => {

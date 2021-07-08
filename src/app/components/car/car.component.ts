@@ -48,7 +48,7 @@ export class CarComponent implements OnInit {
     });
     this.getBrands();
     this.getColors();
-    this.currentBrand = 1;
+    this.currentBrand = 1; 
     this.currentColor = 2;
   }
 

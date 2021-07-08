@@ -28,7 +28,7 @@ import { BrandUpdateComponent } from './components/brand-update/brand-update.com
 import { ColorDetailComponent } from './components/color-detail/color-detail.component';
 import { ColorUpdateComponent } from './components/color-update/color-update.component';
 import { CarListComponent } from './components/car-list/car-list.component';
-import { CarUpdateComponent } from './components/car-update/car-update.component';
+import { CarUpdateComponent } from './components/car-update/car-update.component'; 
 
 @NgModule({
   declarations: [
