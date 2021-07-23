@@ -1,0 +1,41 @@
+<div class="content" style="margin-top: 35px;">
+    <div class="col-md-12">
+        <div class="card" >
+            <div class="card-header"><h5 class="title">Kayıt</h5></div>
+            <div class="card-body">
+                <form [formGroup]="registerForm">
+                    <div class="mb-3">
+                        
+                        <div class="form-group">
+                            <input type="text" id="firstName"
+                            formControlName="firstName" class="form-control" placeholder="İsim"/>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        
+                        <div class="form-group">
+                            <input type="text" id="lastName"
+                            formControlName="lastName" class="form-control" placeholder="Soyisim"/>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        
+                        <div class="form-group">
+                            <input type="email" id="email"
+                            formControlName="email" class="form-control" placeholder="E-posta"/>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        
+                        <div class="form-group">
+                            <input type="text" id="password"
+                            formControlName="password" class="form-control" placeholder="Şifre"/>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="card-body"><a class="btn btn-primary" (click)="register()">Kayıt Ol</a></div>
+        </div>
+    </div>
+</div>

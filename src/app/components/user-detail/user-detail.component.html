@@ -1,0 +1,22 @@
+
+<h4 >Hesap Bilgileri</h4>
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">İsim</th>
+        <th scope="col">Soyisim</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{user?.id}}</td>
+        <td>{{user?.firstName}}</td>
+        <td>{{user?.lastName}}</td>
+        <td>{{user?.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="col-md-12"><a class="btn btn-primary" 
+    style="width: 830px;" routerLink="/user/update/{{user?.id}}">Bilgileri Güncelle</a></div>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import {FormsModule,ReactiveFormsModule} from "@angular/forms"
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
@@ -28,7 +28,12 @@ import { BrandUpdateComponent } from './components/brand-update/brand-update.com
 import { ColorDetailComponent } from './components/color-detail/color-detail.component';
 import { ColorUpdateComponent } from './components/color-update/color-update.component';
 import { CarListComponent } from './components/car-list/car-list.component';
-import { CarUpdateComponent } from './components/car-update/car-update.component'; 
+import { CarUpdateComponent } from './components/car-update/car-update.component';
+import { LoginComponent } from './components/login/login.component'; 
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { RegisterComponent } from './components/register/register.component';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import { UserUpdateComponent } from './components/user-update/user-update.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +58,10 @@ import { CarUpdateComponent } from './components/car-update/car-update.component
     ColorUpdateComponent,
     CarListComponent,
     CarUpdateComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserDetailComponent,
+    UserUpdateComponent,
     
   ],
   imports: [
@@ -67,7 +76,9 @@ import { CarUpdateComponent } from './components/car-update/car-update.component
       positionClass:"toast-bottom-right"
     })
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
